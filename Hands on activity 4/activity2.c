@@ -91,7 +91,7 @@ int main()
         
         case 4:
             printf("\nExiting Program.");
-            return 0;
+            break;;
         
         default:
             printf("\nInvalid input. Please choose a valid option (1 2 3 4).\n");
