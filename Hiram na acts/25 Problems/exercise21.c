@@ -27,13 +27,15 @@ void count_letters (char *input, int *vows, int *cons) {
     for (int i=0; i<strlen(input); i++) {
         char a = tolower(*(input+i));
 
+        printf("%c: %d | %d\n", a, *vows, *cons);
+
         if (isalpha(a) == 0) {
             continue;
         }
         
         if (a == 'a' || a == 'e' || a == 'i' || a == 'o' || a == 'u') {
-            *vows += 1;
-        } else {*cons += 1;}
+            (*vows) ++;
+        } else {(*cons) ++;}
     }
 }
 
