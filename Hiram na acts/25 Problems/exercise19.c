@@ -25,14 +25,14 @@ void get_elements(int *nums, int size) {
     printf("Input %d elements in the array:\n", size);
     for (int i=0; i<size; i++) {
         printf("element - %d: ", i+1);
-        scanf("%d", &*(nums+i));
+        scanf("%d", (nums+i));
     }
 }
 
 void sort_elements(int *nums, int size) {
     for (int i=0; i<size-1; i++) {
         for (int j=0; j<size-i-1; j++) {
-            if (*(nums+j) > *(nums+j+1)) {
+            if (nums[j] > *(nums+j+1)) {
                 int temp = *(nums+j);
                 *(nums+j) =  *(nums+j+1);
                 *(nums+j+1) = temp;
@@ -41,7 +41,7 @@ void sort_elements(int *nums, int size) {
     }
 }
 
-void print_elements(int *nums, int size) {
+void print_elements(int nums[], int size) {
     for (int i=0; i<size; i++) {
         printf("%d: %d\n", i, *(nums+i));
     }
