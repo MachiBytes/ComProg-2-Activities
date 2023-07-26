@@ -16,24 +16,18 @@ int main (int argc, char *argv[]) {
         return 1;
     }
 
-    char buffer[255];
-    printf("\n");
-    printf("The content of the file %s is:\n\n", file);
-    while (fgets(buffer, 255, pF) != NULL) {
-        printf("%s", buffer);
-    }
-
-    fclose(pF);
-
-    pF = fopen(file, "r");
-
     int words=0, chars=0, c;
     bool whitespace = true;
+
+    printf("\n");
+    printf("The content of the file test.txt are :\n");
 
     while (true) {
         c = fgetc(pF);
 
         if (feof(pF)) break;
+
+        printf("%c", c);
 
         chars++;
         if (whitespace && !isspace(c)) {
